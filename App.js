@@ -1,98 +1,48 @@
 import React, { Component} from 'react';
-import { StyleSheet,  View, Image, Button, TextInput } from 'react-native';
+import 'react-native-gesture-handler';
+//import { createStackNavigator } from 'react-navigation';
+//import { createAppContainer } from 'react-navigation';
+import Login from './src/modules/login/containers/login'
+import Registro from './src/modules/login/containers/registro'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 
 
 
-//npm install expo-font
-class Notas extends Component {
-  render() {
-
-    return (
-      
-      <View style={styles.container}>
-
-        <Image source={require('./assets/image/logoMega.png')} style={styles.imag} />
-      
-
-      
-        <View style={styles.ob}>
-          <TextInput
-            placeholder='Usuario'
-            placeholderTextColor='#88B053'
-            maxLength={8}
-            style={styles.bordes}>
+function App() {
+  const Stack = createStackNavigator();
 
 
-          </TextInput>
-        
-
-     
-          <TextInput
-            placeholder='passwod'
-            placeholderTextColor='#88B053'
-            maxLength={8}
-            style={styles.bordes}
-            type='password' >
-          </TextInput>
-        
-
-
-
-        
-          <Button title='Ingresar' color='#88B053' />
-        </View>
-
-       
-        </View>
-      
-
-    )
-  }
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Registro" component={Registro} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
-const styles =StyleSheet.create  ({
-  container: {
-    flex: 1,
-    //backgroundColor: '#FAFAFA',
-    backgroundColor: 'gray',
-    justifyContent:'center',
-    alignItems: 'center',
-    paddingLeft: 10,
-    paddingRight: 10
-    
+export default App;
 
 
-  },
-  ob:{
-  
-    backgroundColor: '#FAFAFA',
- 
-
-  },
-  bordes:{
-    borderWidth: 1,
-    borderColor: '#88B053',
-    padding: 10,
-    marginTop: 10,
-    paddingRight: 10,
-    paddingLeft: 10
-    
-  },
-  imag:{
-      width: 180, 
-      height: 180,
-
-  },
-
-  titulos: {
-
-    fontFamily: 'Helvetica',
-    fontSize: 25
-    
-  }
-
-})
+// const LoginNavigator = createStackNavigator({
+//   Login: { 
+//     screen: Login,
+//     navigationOptions: {
+//       title: 'Notas'
+//     }
+//   }, 
+//   Registro: {
+//     screen: Registro,
+//     navigationOptions: {
+//       title: 'Registro_Notas'
+//     }
+//   }
+// }, {headerLayautPreset: 'center'});
 
 
-export default Notas;
+
+// export default LoginNavigator(LoginNavigator)
+
