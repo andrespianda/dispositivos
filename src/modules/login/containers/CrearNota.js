@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import { StyleSheet,  View, Image,  TextInput, TouchableOpacity, Text } from 'react-native';
 import { Container, Icon, Content, Form, Item, Input, Label, Button } from 'native-base';
+import { Dropdown } from 'react-native-material-dropdown';
 
 
 
@@ -8,47 +9,12 @@ import { Container, Icon, Content, Form, Item, Input, Label, Button } from 'nati
 // class Notas extends Component {
 //   render() {
 export default function Registro ({ navigation}){
-    return (
+
+
+  
+
+      return (
       
-      // <View style={styles.container}>
-      //   <View style={{flex:1,  justifyContent: 'center'}}>
-
-      //   <Image source={require('../../../assets/image/logoMega.png')} style={styles.imag} />
-      //   </View>
-      //   <View style={styles.ob}>
-      //     <TextInput
-      //       placeholder='Usuario'
-      //       placeholderTextColor='#88B053'
-      //       maxLength={8}
-      //       style={styles.bordes}>
-
-
-      //     </TextInput>
-        
-
-     
-      //     <TextInput
-      //       placeholder='passwod'
-      //       placeholderTextColor='#88B053'
-      //       maxLength={8}
-      //       style={styles.bordes}
-      //       type='Password' >
-      //     </TextInput>
-        
-      //   <TouchableOpacity style={{marginTop:10}}>
-      //     <Button style={{}}title='Ingresar' color='#88B053' />
-      //     </TouchableOpacity>
-      //   </View>
-
-      //   <View style={{flex: 0.2, justifyContent: 'center'}}>
-      //     <Text> Andres Pianda - Dispositivos Moviles</Text>
-
-      //   </View>
-
-       
-      //   </View>
-
-
       <Container style={styles.fondo}>
 
         <View style={{ flex: 1, alignItems: 'center' }}>
@@ -57,26 +23,28 @@ export default function Registro ({ navigation}){
         </View>
 
         <View style={{ flex: 1, justifyContent: 'center' }}>
-          <Text style={ { color: 'green', fontSize: 30}} > Registro</Text>
+          <Text style={ { color: 'green', fontSize: 30}} > Nueva Nota</Text>
         </View>
 
         <View style={styles.ob}>
           <Form>
 
             <Item floatingLabel>
-              <Label style={styles.titulos}>Email</Label>
+              <Label style={styles.titulos}>Nombre</Label>
               <Input />
             </Item>
             <Item floatingLabel>
-              <Label style={styles.titulos}>Password</Label>
+              <Label style={styles.titulos}>Apellido</Label>
               <Input />
             </Item>
             <Item floatingLabel>
-              <Label style={styles.titulos}>Nombres</Label>
-              <Input />
+              <Label style={styles.titulos}>Tipo Documento</Label>
+              <Input /> 
+
             </Item>
+
             <Item floatingLabel>
-              <Label style={styles.titulos}>Apellidos</Label>
+              <Label style={styles.titulos}>No. Documento</Label>
               <Input />
             </Item>
           </Form>
@@ -86,8 +54,8 @@ export default function Registro ({ navigation}){
           <View style={styles.bordes}>
             <TouchableOpacity style={{ marginTop: 10 }}>
               <Button block rounded iconLeft large success >
-                <Icon name="md-person"></Icon>
-                <Text style={{ color: 'white' }}>  Registrarse   </Text>
+                <Icon name="md-save"></Icon>
+                <Text style={{ color: 'white' }}>  Guardar Nota   </Text>
               </Button>
             </TouchableOpacity>
           </View>
@@ -96,9 +64,9 @@ export default function Registro ({ navigation}){
           </View>
           <View style={styles.bordes}>
             <TouchableOpacity style={{ marginTop: 10 }}>
-              <Button block rounded iconLeft bordered success large onPress={() => navigation.navigate('Login')} >
+              <Button block rounded iconLeft bordered danger large onPress={() => navigation.goBack()} >
                 <Icon name="md-arrow-back"></Icon>
-                <Text style={{ color: 'green' }}>  Regresar        </Text>
+                <Text style={{ color: 'red' }}>  Cancelar        </Text>
               </Button>
             </TouchableOpacity>
           </View>
@@ -141,7 +109,6 @@ const styles =StyleSheet.create  ({
   imag:{
       width: 180, 
       height: 180,
-
   },
 
   titulos: {
@@ -153,6 +120,3 @@ const styles =StyleSheet.create  ({
   }
 
 })
-
-
-//export default Notas;

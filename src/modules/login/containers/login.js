@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import {  StyleSheet, View, Image, Input, TouchableOpacity} from 'react-native';
-import {  Container, Button, Content, Card, CardItem, Text, Body, Item, Label,  Icon  } from "native-base";
+import {  StyleSheet, View, Image,  TouchableOpacity} from 'react-native';
+import {  Container, Button, Content, Card, CardItem, Input, Text, Body, Item, Label,  Icon  } from "native-base";
 
 
 // class Notas extends Component {
@@ -33,9 +33,9 @@ export default function Login({navigation}) {
                   <Input />
                 </Item>
                 <Item floatingLabel >
-                  <Icon active name="lock" />
+                  <Icon active name="lock"  />
                   <Label>Password</Label>
-                  <Input />
+                  <Input secureTextEntry={true} />
                 </Item>
 
               </Body>
@@ -49,7 +49,8 @@ export default function Login({navigation}) {
           block 
           rounded 
           success
-          onPress={() => navigation.navigate('Registro')}>
+          onPress={() => navigation.navigate('Inicio')}
+          >
             <Text> Ingresar </Text>
           </Button>
         </View>
@@ -61,7 +62,7 @@ export default function Login({navigation}) {
           <View>
             <TouchableOpacity>
               <Button block rounded iconLeft bordered>
-                <Icon name="logo-facebook" style={{ backgroundColor: 'blueligth' }}></Icon>
+                <Icon name="logo-facebook" ></Icon>
                 <Text> facebook </Text>
               </Button>
             </TouchableOpacity>
@@ -97,7 +98,7 @@ export default function Login({navigation}) {
 
           <View>
           <TouchableOpacity>
-              <Text style={{paddingTop: 20 }}>
+              <Text style={{paddingTop: 20 }} onPress={() => navigation.navigate('Registro')}>
                 ¿Registrarse?
               </Text>
                            
